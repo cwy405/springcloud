@@ -1,0 +1,67 @@
+server:
+  port: 8080
+
+
+#jdbc
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/cfm?setUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: cfm
+    password: cfd333
+  application:
+    name: spring-cloud-eureka-client
+  redis:
+    database: 0   # Redis数据库索引（默认为0）
+    host: 127.0.0.1  # Redis服务器地址
+    port: 6379 # Redis服务器连接端口
+    #password:  # Redis服务器连接密码（默认为空）
+    timeout: 5000 # 连接超时时间（毫秒）
+    jedis:
+      pool: 
+        max-active: 500 # 连接池最大连接数（使用负值表示没有限制）
+        max-idle: -1 # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: 100 # 连接池中的最大空闲连接
+        min-idle: 0  # 连接池中的最小空闲连接
+  main:
+    allow-bean-definition-overriding: true  #feigh配置了同个服务名时需要开启
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  #  registry-fetch-interval-seconds: 10  # 拉取服务注册信息间隔（缺省为30s）
+  #  healthcheck:
+  #    enabled: false # 关闭健康检查
+ # instance:
+   # lease-renewal-interval-in-seconds: 5 # 心跳时间，即服务续约间隔时间（缺省为30s）
+   # lease-expiration-duration-in-seconds: 15 # 发呆时间，即服务续约到期时间（缺省为90s）
+
+
+#feign:
+#   hystrix:
+#     enabled: true # feign 是否开启hystrix熔断
+
+#hystrix:
+#   command:
+#     default:
+#       execution:
+#         timeout:
+#           enabled: true # hystrix是否给方法执行设置超时，默认为 true
+#         isolation:
+#           thread:
+#            timeoutInMilliseconds: 10000 # hystrix配置全局的超时时间，默认是1000，即1s
+#       circuitBreaker:
+#         requestVolumeThreshold: 1000 #设置熔断器失败的个数，当达到多少个时熔断器开启
+
+
+
+#ribbon:
+#  ConnectTimeout: 600 # 设置连接超时时间
+#  ReadTimeout: 6000 # 设置读取超时时间
+#  OkToRetryOnAllOperations: true # 对所有操作请求都进行重试
+#  MaxAutoRetriesNextServer: 2
+#  MaxAutoRetries: 1
+
+
+

@@ -1,0 +1,24 @@
+
+server:  port: 8761
+
+
+
+#eureka server
+eureka:  client:    register-with-eureka: false
+    fetch-registry: false
+
+# log
+logging:  config: classpath:logback-spring.xml
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate: INFO
+
+
+#spring.profiles.active=dev
+
+
+
+
