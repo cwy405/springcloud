@@ -1,4 +1,4 @@
-package com.cfm.eureka.provide.application;
+package com.cfm.eureka.provide;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
@@ -23,13 +23,9 @@ import org.springframework.context.annotation.ComponentScan;
 * @author: Chen WeiYu
 * @date: 2019年12月4日 下午8:34:55
  */
-@ComponentScan(basePackages= {"com.cfm.eureka.provide.application.config",
-		"com.cfm.eureka.provide.test.web"
-		})
-@EnableAutoConfiguration(exclude= {DataSourceAutoConfiguration.class})
+@SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
-@EnableDiscoveryClient
 public class ProvideClientApplication {
 	
 	public static void main(String[] args) {
