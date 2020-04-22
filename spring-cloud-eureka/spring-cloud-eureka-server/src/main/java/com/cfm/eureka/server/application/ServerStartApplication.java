@@ -25,8 +25,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @author cwy
  * @history 创建文档；Mender:cwy；Date:2019年11月26日；
  */
-@ComponentScan(basePackages="com.cfm.application.config")
-@EnableAutoConfiguration(exclude= {DataSourceAutoConfiguration.class})
+@SpringBootApplication
 @EnableEurekaServer
 public class ServerStartApplication {
 	
