@@ -57,7 +57,7 @@ public class TestController {
 	public String router(@PathVariable("id") String id) {
 		logger.info("开始调用------------------------"+tpl);
 		
-		String json = tpl.getForObject("http://spring-cloud-eureka-client/test/getCode/"+id, String.class);
+		String json = tpl.getForObject("http://spring-cloud-eureka-provide/test/getCode/"+id, String.class);
 		logger.info("调用结果-----------------------"+json);
 
 		return json;
