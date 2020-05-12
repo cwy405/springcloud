@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -37,7 +38,7 @@ public class TestController {
 	}
 	@RequestMapping("/getCode/{id}")
 	@ResponseBody
-	public ResultVo getCode(@RequestParam("id") String id) {
+	public ResultVo getCode(@PathVariable("id") String id) {
 		
 		Map<String,Object> map = new HashMap<>();
 		map.put("id", id);
