@@ -1,0 +1,33 @@
+
+server:  port: 8761
+
+
+
+#eureka server
+eureka:  client:
+        #该配置表示是否需要将自己注册到注册中心上(默认为true),如果是单机部署,不需要设置为true;
+        #但是注册中心集群时候必须为true;因为集群时，其他Eureka需要从此Eureka中的节点上获取数据；
+    register-with-eureka: true
+        #表示是否从Eureka Server获取注册信息(默认为true),
+        #如果是单机部署，不需要同步其他节点的数据，可以设为false)
+    fetch-registry: true
+  #instance:    
+        #注册到eurekaip地址(注册中心IP)
+    #hostname: 127.0.0.1
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/
+# log
+logging:  config: classpath:logback-spring.xml
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate: INFO
+
+
+#spring.profiles.active=dev
+
+
+
+
