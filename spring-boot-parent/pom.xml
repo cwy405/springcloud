@@ -22,7 +22,7 @@
 		<gleam.version>1.0.0-SNAPSHOT</gleam.version>
 		<spring-boot-parent>1.0.0.1-SNAPSHOT</spring-boot-parent>
 		<shiro.version>1.2.5</shiro.version>
-		<jackson.version>2.9.9</jackson.version>
+		<jackson.version>2.9.10.8</jackson.version>
 		<spring.boot.starter.parent.version></spring.boot.starter.parent.version>
 		<java.version>1.8</java.version>
 		<jdkLevel>1.8</jdkLevel>
